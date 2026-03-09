@@ -7,26 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#030712",
-        foreground: "#f9fafb",
+        background: "rgb(var(--color-bg) / <alpha-value>)",
+        foreground: "rgb(var(--color-text) / <alpha-value>)",
         primary: {
-          DEFAULT: "#06b6d4",
-          foreground: "#030712",
+          DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
+          foreground: "rgb(var(--color-bg) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "#8b5cf6",
-          foreground: "#f9fafb",
+          DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
+          foreground: "rgb(var(--color-text) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "#3b82f6",
-          foreground: "#f9fafb",
+          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          foreground: "rgb(var(--color-text) / <alpha-value>)",
         },
         muted: {
-          DEFAULT: "#1f2937",
-          foreground: "#9ca3af",
+          DEFAULT: "rgb(var(--color-muted) / <alpha-value>)",
+          foreground: "rgb(var(--color-text-muted) / <alpha-value>)",
         },
-        border: "#1f2937",
-        glow: "rgba(6, 182, 212, 0.5)",
+        border: "rgb(var(--color-border) / <alpha-value>)",
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
@@ -38,8 +37,8 @@ export default {
       },
       keyframes: {
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(6, 182, 212, 0.2), 0 0 10px rgba(6, 182, 212, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(6, 182, 212, 0.4)' },
+          '0%': { boxShadow: '0 0 5px rgb(var(--color-primary) / 0.2), 0 0 10px rgb(var(--color-primary) / 0.2)' },
+          '100%': { boxShadow: '0 0 20px rgb(var(--color-primary) / 0.6), 0 0 40px rgb(var(--color-primary) / 0.4)' },
         }
       }
     },

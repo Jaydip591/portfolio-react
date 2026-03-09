@@ -49,7 +49,7 @@ const Education = () => {
                   <Calendar size={14} />
                   <span>2022 - 2025</span>
                </div>
-               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Bachelor of Computer Applications (BCA)</h3>
+               <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">Bachelor of Computer Applications (BCA)</h3>
                <p className="text-primary font-medium mb-2">Sankalchand Patel University</p>
                <span className="px-3 py-1 glass rounded-full text-[10px] font-mono text-muted-foreground border-white/5 uppercase tracking-wider">
                   2025 Passout
@@ -65,15 +65,15 @@ const Education = () => {
                 
                 <div className="relative z-10">
                   <div className="flex items-baseline space-x-2 mb-4">
-                    <span className="text-4xl font-black text-white">8.42</span>
+                    <span className="text-4xl font-black text-foreground">8.42</span>
                     <span className="text-sm text-muted-foreground uppercase font-bold tracking-widest">CGPA</span>
                   </div>
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-2 text-xs text-muted-foreground bg-white/5 p-2 rounded-lg">
+                    <div className="flex items-center space-x-2 text-xs text-muted-foreground bg-foreground/5 p-2 rounded-lg">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       <span>Focus on Software Development</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-xs text-muted-foreground bg-white/5 p-2 rounded-lg">
+                    <div className="flex items-center space-x-2 text-xs text-muted-foreground bg-foreground/5 p-2 rounded-lg">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       <span>Advanced Data Management</span>
                     </div>

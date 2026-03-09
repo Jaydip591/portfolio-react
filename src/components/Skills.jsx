@@ -25,36 +25,51 @@ const itemVariants = {
     }
 };
 
-const SkillCategory = ({ title, icon: Icon, skills, colorClass }) => (
-    <motion.div
-        variants={itemVariants}
-        className="glass-card p-8"
-    >
-        <div className={`flex items-center space-x-3 mb-8 ${colorClass}`}>
-            <Icon size={24} />
-            <h3 className="text-xl font-bold text-white">{title}</h3>
-        </div>
-        <div className="space-y-6">
-            {skills.map((skill) => (
-                <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium text-muted-foreground">{skill.name}</span>
-                        <span className="text-sm font-mono text-primary">{skill.level}%</span>
+const SkillCategory = ({ title, icon: Icon, skills, colorClass }) => {
+    // Helper to determine the gradient colors based on the colorClass
+    const getGradient = () => {
+        if (colorClass.includes('primary')) return 'from-primary to-primary/60';
+        if (colorClass.includes('secondary')) return 'from-secondary to-secondary/60';
+        return 'from-accent to-accent/60';
+    };
+
+    const getTextColor = () => {
+        if (colorClass.includes('primary')) return 'text-primary';
+        if (colorClass.includes('secondary')) return 'text-secondary';
+        return 'text-accent';
+    };
+
+    return (
+        <motion.div
+            variants={itemVariants}
+            className="glass-card p-8"
+        >
+            <div className={`flex items-center space-x-3 mb-8 ${colorClass}`}>
+                <Icon size={24} />
+                <h3 className="text-xl font-bold text-foreground">{title}</h3>
+            </div>
+            <div className="space-y-6">
+                {skills.map((skill) => (
+                    <div key={skill.name}>
+                        <div className="flex justify-between mb-2">
+                            <span className="text-sm font-medium text-muted-foreground">{skill.name}</span>
+                            <span className={`text-sm font-mono ${getTextColor()}`}>{skill.level}%</span>
+                        </div>
+                        <div className="h-2 w-full bg-foreground/5 rounded-full overflow-hidden">
+                            <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: `${skill.level}%` }}
+                                transition={{ duration: 1.5, ease: [0.23, 1, 0.32, 1] }}
+                                viewport={{ once: true }}
+                                className={`h-full bg-gradient-to-r ${getGradient()}`}
+                            />
+                        </div>
                     </div>
-                    <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                        <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            transition={{ duration: 1.5, ease: [0.23, 1, 0.32, 1] }} // Smooth easeOut
-                            viewport={{ once: true }}
-                            className={`h-full bg-gradient-to-r ${colorClass === 'text-primary' ? 'from-primary to-cyan-400' : 'from-secondary to-purple-400'}`}
-                        />
-                    </div>
-                </div>
-            ))}
-        </div>
-    </motion.div>
-);
+                ))}
+            </div>
+        </motion.div>
+    );
+};
 
 const Skills = () => {
     const categories = [

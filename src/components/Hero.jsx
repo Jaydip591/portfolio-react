@@ -67,7 +67,7 @@ const Hero = () => {
                         <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                     </motion.a>
                     <motion.a
-                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                        whileHover={{ scale: 1.05 }} // Removed hardcoded white bg
                         whileTap={{ scale: 0.95 }}
                         href="#contact"
                         className="btn-secondary flex items-center"
@@ -79,7 +79,7 @@ const Hero = () => {
                 {/* Code Snippet Decoration */}
                 <motion.div
                     variants={itemVariants}
-                    className="mt-20 max-w-2xl mx-auto glass-card p-4 text-left font-mono text-sm border-white/5 opacity-60 hover:opacity-100 transition-opacity"
+                    className="mt-20 max-w-2xl mx-auto glass-card p-4 text-left font-mono text-sm border-foreground/5 opacity-60 hover:opacity-100 transition-opacity"
                 >
                     <div className="flex items-center space-x-2 mb-4">
                         <div className="w-3 h-3 rounded-full bg-red-500/50" />
@@ -90,7 +90,7 @@ const Hero = () => {
                         </span>
                     </div>
                     <p className="text-secondary">class <span className="text-primary">Developer</span>:</p>
-                    <p className="pl-4 text-white">def __init__(self):</p>
+                    <p className="pl-4 text-foreground">def __init__(self):</p>
                     <p className="pl-8 text-muted-foreground">self.name = <span className="text-accent">"Jaydip Prajapati"</span></p>
                     <p className="pl-8 text-muted-foreground">self.role = <span className="text-accent">"Backend Specialist"</span></p>
                     <p className="pl-8 text-muted-foreground">self.focus = [<span className="text-accent">"Scalability"</span>, <span className="text-accent">"API Design"</span>]</p>

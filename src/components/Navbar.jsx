@@ -25,16 +25,11 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${scrolled ? 'glass py-3' : 'bg-transparent py-6'}`}>
             <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex justify-between items-center">
-                <motion.a
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    href="#"
-                    className="text-2xl font-black tracking-tighter text-white group"
-                >
-                    JP<span className="text-primary group-hover:neon-text transition-all duration-300">.</span>
-                </motion.a>
-
+                <a href="#" className="group flex items-center space-x-2">
+                    <span className="text-2xl font-black tracking-tighter text-foreground">
+                        JD<span className="text-primary group-hover:neon-text transition-all duration-300">.</span>
+                    </span>
+                </a>
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center space-x-10">
                     {navLinks.map((link, i) => (
@@ -54,12 +49,12 @@ const Navbar = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="flex items-center space-x-5 pl-5 border-l border-white/10"
+                        className="flex items-center space-x-5 pl-5 border-l border-foreground/10"
                     >
-                        <a href="https://github.com/jaydip591" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors hover:scale-110">
+                        <a href="https://github.com/jaydip591" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110">
                             <Github size={20} />
                         </a>
-                        <a href="https://www.linkedin.com/in/jaydip-prajapati-bbb920226/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors hover:scale-110">
+                        <a href="https://www.linkedin.com/in/jaydip-prajapati-bbb920226/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110">
                             <Linkedin size={20} />
                         </a>
                     </motion.div>
@@ -67,7 +62,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Toggle */}
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-foreground p-2">
                         <AnimatePresence mode="wait">
                             {isOpen ? (
                                 <motion.div key="close" initial={{ rotate: -90 }} animate={{ rotate: 0 }} exit={{ rotate: 90 }}><X /></motion.div>
@@ -100,7 +95,7 @@ const Navbar = () => {
                                     {link.name}
                                 </a>
                             ))}
-                            <div className="flex space-x-8 pt-6 border-t border-white/10">
+                            <div className="flex space-x-8 pt-6 border-t border-foreground/10">
                                 <a href="https://github.com/jaydip591" target="_blank" rel="noopener noreferrer" className="text-muted-foreground">
                                     <Github size={24} />
                                 </a>

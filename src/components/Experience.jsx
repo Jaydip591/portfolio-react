@@ -20,7 +20,7 @@ const Experience = () => {
       role: "Python Full Stack Developer Intern",
       company: "QSpiders",
       period: "Mar 2025 - Jun 2025",
-      location: "Remote",
+      location: "Ahmedabad",
       description: [
         "Three-month intensive internship focusing on core programming foundations (Mar 25, 2025 - Jun 25, 2025).",
         "Mastered Python programming basics and data structures.",
@@ -78,7 +78,7 @@ const Experience = () => {
                     <Calendar size={14} />
                     <span>{exp.period}</span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-tight">{exp.role}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-1 tracking-tight">{exp.role}</h3>
                   <div className="flex items-center md:justify-end text-secondary font-medium mb-4">
                     <span>{exp.company}</span>
                     <span className="mx-2 opacity-30">|</span>
@@ -91,7 +91,7 @@ const Experience = () => {
 
                 {/* Description Side / Card */}
                 <div className="pl-8 md:pl-12">
-                  <div className="glass-card p-6 border-white/5 hover:border-secondary/20 transition-colors">
+                  <div className="glass-card p-6 border-foreground/5 hover:border-secondary/20 transition-colors">
                     <ul className="space-y-3">
                       {exp.description.map((item, i) => (
                         <li key={i} className="text-muted-foreground flex items-start text-sm leading-relaxed">

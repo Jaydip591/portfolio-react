@@ -28,7 +28,7 @@ const About = () => {
                             className="glass-card p-6"
                         >
                             <Code2 className="text-secondary mb-4" size={32} />
-                            <h3 className="font-bold text-white mb-2">Clean Code</h3>
+                            <h3 className="font-bold text-foreground mb-2">Clean Code</h3>
                             <p className="text-sm text-muted-foreground">Writing maintainable and efficient code following industry best practices.</p>
                         </motion.div>
                         <motion.div
@@ -36,7 +36,7 @@ const About = () => {
                             className="glass-card p-6"
                         >
                             <Rocket className="text-primary mb-4" size={32} />
-                            <h3 className="font-bold text-white mb-2">Fast APIs</h3>
+                            <h3 className="font-bold text-foreground mb-2">Fast APIs</h3>
                             <p className="text-sm text-muted-foreground">Optimizing backend performance for seamless user experiences.</p>
                         </motion.div>
                     </div>
@@ -57,7 +57,7 @@ const About = () => {
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.5, duration: 0.8 }}
-                                className="w-48 h-48 mx-auto rounded-full p-1 bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(6,182,212,0.3)] overflow-hidden"
+                                className="w-48 h-48 mx-auto rounded-full p-1 bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-6 shadow-[0_0_30px_rgb(var(--color-primary)/0.3)] overflow-hidden"
                             >
                                 <img 
                                     src="/profile.jpg" 

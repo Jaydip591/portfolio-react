@@ -93,12 +93,12 @@ const Projects = () => {
                                             <Code size={24} />
                                         </div>
                                         <div className="flex space-x-4">
-                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors">
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                                                 <Github size={20} />
                                             </a>
                                         </div>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
+                                    <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
                                     <p className="text-muted-foreground mb-8 text-sm line-clamp-3 leading-relaxed">
                                         {project.description}
                                     </p>
