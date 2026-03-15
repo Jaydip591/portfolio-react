@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { User, Code2, Rocket } from 'lucide-react';
@@ -76,3 +77,4 @@ const About = () => {
 };
 
 export default About;
+

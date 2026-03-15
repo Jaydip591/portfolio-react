@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Github, Linkedin, Mail, CheckCircle2, AlertCircle } from 'lucide-react';
@@ -23,41 +24,60 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="space-y-8"
                 >
-                    <div className="glass-card p-8 flex items-center space-x-6">
+                    <motion.a 
+                        href="mailto:prajapatijaydip591@gmail.com"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="glass-card p-8 flex items-center space-x-6 block"
+                    >
                         <div className="bg-primary/10 p-4 rounded-2xl text-primary">
                             <Mail size={32} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-foreground">Email</h3>
-                            <a href="mailto:prajapatijaydip591@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                            <h3 className="font-bold text-foreground text-lg">Email</h3>
+                            <p className="text-muted-foreground transition-colors group-hover:text-primary">
                                 prajapatijaydip591@gmail.com
-                            </a>
+                            </p>
                         </div>
-                    </div>
+                    </motion.a>
 
-                    <div className="glass-card p-8 flex items-center space-x-6">
+                    <motion.a 
+                        href="https://github.com/jaydip591" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="glass-card p-8 flex items-center space-x-6 block"
+                    >
                         <div className="bg-secondary/10 p-4 rounded-2xl text-secondary">
                             <Github size={32} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-foreground">GitHub</h3>
-                            <a href="https://github.com/jaydip591" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <h3 className="font-bold text-foreground text-lg">GitHub</h3>
+                            <p className="text-muted-foreground transition-colors group-hover:text-primary">
                                 jaydip591
-                            </a>
+                            </p>
                         </div>
-                    </div>
+                    </motion.a>
 
-                    <div className="glass-card p-8 flex items-center space-x-6">
+                    <motion.a 
+                        href="https://www.linkedin.com/in/jaydip-prajapati-bbb920226/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="glass-card p-8 flex items-center space-x-6 block"
+                    >
                         <div className="bg-accent/10 p-4 rounded-2xl text-accent">
                             <Linkedin size={32} />
                         </div>
                         <div>
-                            <h3 className="font-bold text-foreground">LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/jaydip-prajapati-bbb920226/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <h3 className="font-bold text-foreground text-lg">LinkedIn</h3>
+                            <p className="text-muted-foreground transition-colors group-hover:text-primary">
                                 Jaydip Prajapati
-                            </a>
+                            </p>
                         </div>
-                    </div>
+                    </motion.a>
                 </motion.div>
 
                 <motion.div
@@ -153,3 +173,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

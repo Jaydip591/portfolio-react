@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, Layout, Database } from 'lucide-react';
@@ -56,12 +57,9 @@ const SkillCategory = ({ title, icon: Icon, skills, colorClass }) => {
                             <span className={`text-sm font-mono ${getTextColor()}`}>{skill.level}%</span>
                         </div>
                         <div className="h-2 w-full bg-foreground/5 rounded-full overflow-hidden">
-                            <motion.div
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${skill.level}%` }}
-                                transition={{ duration: 1.5, ease: [0.23, 1, 0.32, 1] }}
-                                viewport={{ once: true }}
-                                className={`h-full bg-gradient-to-r ${getGradient()}`}
+                            <div
+                                className={`h-full bg-gradient-to-r ${getGradient()} skill-bar`}
+                                style={{ width: `${skill.level}%` }}
                             />
                         </div>
                     </div>
@@ -135,3 +133,4 @@ const Skills = () => {
 };
 
 export default Skills;
+
