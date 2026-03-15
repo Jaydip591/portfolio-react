@@ -60,10 +60,9 @@ html[data-theme='light'] {
 
 @layer components {
   .glass {
-    background: rgb(var(--color-glass) / var(--glass-opacity));
-    backdrop-filter: blur(20px);
-    border: 1px solid rgb(var(--color-glass) / var(--glass-border-opacity));
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    background: rgb(var(--color-glass) / 0.07);
+    border: 1px solid rgb(var(--color-glass) / 0.12);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
   .glass-card {
@@ -71,14 +70,23 @@ html[data-theme='light'] {
   }
 
   .glass-card:hover {
-    background: rgb(var(--color-glass) / calc(var(--glass-opacity) + 0.05));
-    border-color: rgb(var(--color-glass) / calc(var(--glass-border-opacity) * 2));
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    background: rgb(var(--color-glass) / 0.11);
+    border-color: rgb(var(--color-glass) / 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
 
   .neon-text {
-    @apply text-primary transition-all duration-300;
-    filter: drop-shadow(0 0 10px rgb(var(--color-primary) / 0.5));
+    @apply text-primary;
+  }
+
+  .skill-bar {
+    transform-origin: left;
+    animation: growBar 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+
+  @keyframes growBar {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
   }
 
   /* Smooth Entrance Utility */
@@ -111,14 +119,17 @@ html[data-theme='light'] {
   }
 
   .btn-primary {
-    @apply px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full transition-all duration-500 hover:opacity-90 hover:scale-105 active:scale-95 flex items-center justify-center gap-2;
-    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 0 30px rgb(var(--color-primary) / 0.3);
+    @apply px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full flex items-center justify-center gap-2;
+    box-shadow: 0 0 24px rgb(var(--color-primary) / 0.25);
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .btn-primary:hover {
-    box-shadow: 0 0 50px rgb(var(--color-primary) / 0.5);
+    opacity: 0.9;
+    transform: scale(1.04);
+    box-shadow: 0 0 36px rgb(var(--color-primary) / 0.4);
   }
+  .btn-primary:active { transform: scale(0.96); }
 
   .btn-secondary {
     @apply px-8 py-4 glass text-foreground font-bold rounded-full transition-all duration-500 hover:bg-white/15 hover:scale-105 active:scale-95;
@@ -127,10 +138,12 @@ html[data-theme='light'] {
 
   .grid-background {
     background-image: 
-      linear-gradient(to right, rgb(var(--color-border) / 0.5) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(var(--color-border) / 0.5) 1px, transparent 1px);
+      linear-gradient(to right, rgb(var(--color-border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--color-border) / 0.4) 1px, transparent 1px);
     background-size: 4rem 4rem;
-    mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+    opacity: 0.25;
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
   }
 }
 

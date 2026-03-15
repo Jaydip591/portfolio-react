@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar } from 'lucide-react';
@@ -89,3 +90,4 @@ const Education = () => {
 };
 
 export default Education;
+

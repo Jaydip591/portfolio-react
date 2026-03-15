@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Terminal } from 'lucide-react';
@@ -57,23 +58,19 @@ const Hero = () => {
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <motion.a
-                        whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(6, 182, 212, 0.4)" }}
-                        whileTap={{ scale: 0.95 }}
+                    <a
                         href="#projects"
                         className="btn-primary flex items-center group"
                     >
                         View Projects
                         <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                    </motion.a>
-                    <motion.a
-                        whileHover={{ scale: 1.05 }} // Removed hardcoded white bg
-                        whileTap={{ scale: 0.95 }}
+                    </a>
+                    <a
                         href="#contact"
                         className="btn-secondary flex items-center"
                     >
                         Contact Me
-                    </motion.a>
+                    </a>
                 </motion.div>
 
                 {/* Code Snippet Decoration */}
@@ -101,3 +98,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

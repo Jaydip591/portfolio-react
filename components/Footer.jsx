@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 
@@ -43,9 +44,9 @@ const Footer = () => {
 
                 <div className="mt-16 pt-8 border-t border-foreground/5 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground gap-4">
                     <p>© 2026 Jaydip Prajapati. All rights reserved.</p>
-                    <p className="flex items-center gap-1">
+                    {/* <p className="flex items-center gap-1">
                         Made with <span className="text-red-500">♥</span> using React & Tailwind
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </footer>
@@ -53,3 +54,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

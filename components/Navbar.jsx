@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Github, Linkedin } from 'lucide-react';
@@ -7,11 +8,18 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+        let rafId;
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                setScrolled(window.scrollY > 20);
+            });
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            cancelAnimationFrame(rafId);
+        };
     }, []);
 
     const navLinks = [
@@ -112,3 +120,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Code } from 'lucide-react';
@@ -120,3 +121,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
